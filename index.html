@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script defer src="./main.js" ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>GerFit</title>
+</head>
+<body>
+    <header>
+        <div class="headerLinkContainer" id="botonAdmin">
+            <h4 class="linkHeader">Administrador</h4>
+        </div>
+        <div class="headerLinkContainer">
+            <h4 class="linkHeader">Usuario</h4>
+        </div>
+        <div class="headerLinkContainer" id="ubicacionSaludo">
+        </div>    
+    </header>
+    
+    <main>
+        <div class="formContainer" id="NombreUsuarioContainer">
+            <div class="tituloForm">
+                <h3>Agregar Nombre Usuario</h3>
+            </div>
+            <form class="nombreUsuarioForm">
+                <label for="nombreUsuario">Nombre</label>
+                <input type="text" id="nombreUsuario">
+                <label for="pesoUsuario">Peso actual</label>
+                <input type="number" id="pesoUsuario">
+                <button id="cargarNombre" type="submit">Cargar</button>
+            </form>
+        </div>
+        <div class="formContainer" id="crearEjercicioContainer">
+            <div class="tituloForm">
+                <h3>Agregar ejercicios</h3>
+            </div>
+            <form id="crearEjercicio">
+                <label for="nombreEjercicio">Nombre ejercicio</label>
+                <input type="text" id="nombreEjercicio">
+                <label for="tiposEjercicios">Tipo de ejercicio</label>
+                <select name="tiposEjercicios" id="tiposEjercicios">
+                </select>
+                <button type="submit" id="agregarEjercicio">Agregar</button>
+            </form>
+        </div>
+        <h2 id="tituloNiveles">Elige la opción segun tu nivel</h2>
+        <div class="options-container">
+            <div class="option-card" id="card-principiante">
+                <h1>P</h3>
+                <h4>Principiante</h4>
+            </div>
+            <div class="option-card" id="card-intermedio">
+                <h1>I</h3>
+                <h4>Intermedio</h4>
+            </div>
+            <div class="option-card" id="card-avanzado">
+                <h1>A</h3>
+                <h4>Avanzado</h4>
+            </div>
+        </div>
+
+        <div class="rutina-container">
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
