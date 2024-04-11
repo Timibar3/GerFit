@@ -87,9 +87,16 @@ let datoNombreEjercicio = document.querySelector('input#nombreEjercicio')
 
 function agregarEjercicio (e) {
     e.preventDefault()
-    // tengo que agregar aca la comprobacion que el ejercicio no exite
     let ejercicio = new Ejercicio (datoNombreEjercicio.value, selectTipos.value)
-    ejercicios.push(ejercicio)
+    let resultadoBusqueda = ejercicios.find(el => el.nombre == datoNombreEjercicio.value.toLowerCase())
+    if(resultadoBusqueda == undefined && datoNombreEjercicio.value != ''){
+        ejercicios.push(ejercicio)
+        alert('Ejercicios agregado correctamente')
+    }else if (resultadoBusqueda != undefined) {
+        alert('El ejercicio ya existe')
+    }else if (datoNombreEjercicio.value == ''){
+        alert('El nombre del ejercicio no puede quedar vacio')
+    }
     datoNombreEjercicio.value = ''
 }
 
@@ -102,9 +109,8 @@ let datoNombreUsuario = document.querySelector('input#nombreUsuario')
 let datoPesoUsuario = document.querySelector('input#pesoUsuario')
 let ubicacionSaludo = document.querySelector('div#ubicacionSaludo')
 let contenedorFormUsuario = document.querySelector('div#NombreUsuarioContainer')
-
+// Esta variable la uso para buscar el peso guardado o para que busque el null si nunca se guardo.
 let peso = JSON.parse(localStorage.getItem('peso'))
-console.log(typeof(peso))
 
 function saludarUsuario (e) {
     e.preventDefault()
@@ -206,7 +212,6 @@ function creacionDeRutinaPrincipiante () {
     agregarARutinaFinal(rutinaParcial)
     ejerciciosPorTipos = []
     rutinaParcial = []
-    console.log(rutinaFinal)
 }
 
 function creacionDeRutinaIntermedio () {
@@ -240,7 +245,6 @@ function creacionDeRutinaIntermedio () {
     agregarARutinaFinal(rutinaParcial)
     ejerciciosPorTipos = []
     rutinaParcial = []
-    console.log(rutinaFinal)
 }
 
 function creacionDeRutinaAvanzado () {
@@ -274,7 +278,6 @@ function creacionDeRutinaAvanzado () {
     agregarARutinaFinal(rutinaParcial)
     ejerciciosPorTipos = []
     rutinaParcial = []
-    console.log(rutinaFinal)
 }
 
 // Selecciono los botones de los niveles y hago que cada uno ejecute la funcion de la creacion de la rutina de su nivel.
@@ -296,7 +299,6 @@ function ejecucionRutinaPrincipiante (e){
             <h5>${rutinaFinal[i].nombre} </h5>
             <h5>${rutinaFinal[i].repeticiones} </h5>
             </div>`
-        console.log(rutinaFinal[i].nombre)
     }
     
     rutinaFinal = []
@@ -316,7 +318,6 @@ function ejecucionRutinaIntermedio (e){
             <h5>${rutinaFinal[i].nombre} </h5>
             <h5>${rutinaFinal[i].repeticiones} </h5>
             </div>`
-        console.log(rutinaFinal[i].nombre)
     }
     
     rutinaFinal = []
@@ -336,7 +337,6 @@ function ejecucionRutinaAvanzado (e){
             <h5>${rutinaFinal[i].nombre} </h5>
             <h5>${rutinaFinal[i].repeticiones} </h5>
             </div>`
-        console.log(rutinaFinal[i].nombre)
     }
     
     rutinaFinal = []
