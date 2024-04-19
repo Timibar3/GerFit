@@ -114,14 +114,12 @@ let peso = JSON.parse(localStorage.getItem('peso'))
 
 function saludarUsuario (e) {
     e.preventDefault()
-    console.log(datoNombreUsuario.value)
     let saludo = document.createElement('p')
     if (peso == null){
         saludo.innerText = 'Hola ' + datoNombreUsuario.value
     }else if (peso < datoPesoUsuario.value){
         saludo.innerText = 'Hola ' + datoNombreUsuario.value + ' subiste ' + (datoPesoUsuario.value - peso) + 'Kg'
     }else if (peso > datoPesoUsuario.value){
-        console.log('hola puto')
         saludo.innerText = 'Hola ' + datoNombreUsuario.value + ' bajaste ' + (peso - datoPesoUsuario.value) + 'Kg'
     }else{
         console.log('Algo salio mal')
