@@ -1,0 +1,297 @@
+[
+    {
+      "id": 1,
+      "nombre": "Flexiones de brazos",
+      "tipo": "ECTS",
+      "img": "./img/FlexionesDeBrazos.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Sentadillas",
+      "tipo": "ECTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 3,
+      "nombre": "Plancha abdominal",
+      "tipo": "ECTS",
+      "img": "./img/planchaAbdominal.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "Curl de bíceps con mancuernas",
+      "tipo": "ECTS",
+      "img": "./img/curlBiceps.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "Zancadas",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 6,
+      "nombre": "Skipping",
+      "tipo": "ECTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 7,
+      "nombre": "Dominadas",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 8,
+      "nombre": "Abdominales crunch",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 9,
+      "nombre": "Elevación de talones",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 10,
+      "nombre": "Burpees",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 11,
+      "nombre": "Fondos de tríceps",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 12,
+      "nombre": "Desplantes",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 13,
+      "nombre": "Jumping jacks",
+      "tipo": "ECTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 14,
+      "nombre": "Flexiones diamante",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 15,
+      "nombre": "Elevación lateral de hombros",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 16,
+      "nombre": "Mountain climbers",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 17,
+      "nombre": "Flexiones de brazos inclinadas",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 18,
+      "nombre": "Elevación de rodillas",
+      "tipo": "ECTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 19,
+      "nombre": "Flexiones hindúes",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 20,
+      "nombre": "Peso muerto",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 21,
+      "nombre": "Plancha lateral",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 22,
+      "nombre": "Escaladores",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 23,
+      "nombre": "Press de banca",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 24,
+      "nombre": "Step-up",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 25,
+      "nombre": "Flexiones con palmada",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 26,
+      "nombre": "Sentadilla búlgara",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 27,
+      "nombre": "Remo con barra",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 28,
+      "nombre": "Crunch inverso",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 29,
+      "nombre": "Flexiones con apoyo",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 30,
+      "nombre": "Estocadas",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 31,
+      "nombre": "Pull-ups",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 32,
+      "nombre": "Hip Thrust",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 33,
+      "nombre": "Plancha con elevación de pierna",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 34,
+      "nombre": "Elevación frontal de hombros",
+      "tipo": "EPTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 35,
+      "nombre": "Sentadilla sumo",
+      "tipo": "EPTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 36,
+      "nombre": "thrusters",
+      "tipo": "EF",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 37,
+      "nombre": "wall balls",
+      "tipo": "EF",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 38,
+      "nombre": "kettlebell swings",
+      "tipo": "EF",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 39,
+      "nombre": "Tirones de fuerza",
+      "tipo": "EF",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 40,
+      "nombre": "Opcion01",
+      "tipo": "S",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 41,
+      "nombre": "Opcion02",
+      "tipo": "S",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 42,
+      "nombre": "Opcion05",
+      "tipo": "S",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 43,
+      "nombre": "Opcion03",
+      "tipo": "S",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 44,
+      "nombre": "Opcion04",
+      "tipo": "S",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 45,
+      "nombre": "Plancha abdominal alternada",
+      "tipo": "ECTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 46,
+      "nombre": "Sentadilla con salto",
+      "tipo": "ECTI",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 47,
+      "nombre": "Manguito rotador con banda",
+      "tipo": "ECTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 48,
+      "nombre": "Apertura de hombros con banda",
+      "tipo": "ECTS",
+      "img": "./img/1366_2000.jpeg"
+    },
+    {
+      "id": 49,
+      "nombre": "Sentadilla con salto",
+      "tipo": "ECTI",
+      "img": "./img/1366_2000.jpeg"
+    }
+  ]
+  

@@ -1,21 +1,67 @@
-let entradasEnCalorTrenSuperior = [
-    'Saltos estrella','Push-Ups piso','Push-Ups Inclinado','Push-Ups Declinado','Burpees'];
+// Creo el saludo al usuario.
+// Primero veo si hay un usuario guardado en localStorage.
+const ubicacionNombre = document.getElementById('ubicacionSaludo')
 
-let entradasEnCalorTrenInferior = [
-    'Air Squat','Puente','Sentadilla Bulgara','Gemelos', 'Salto de rana'];
+async function obtenerNombre () {
+    const { value: userName } = await Swal.fire({
+        title: "Ingresa tu nombre",
+        input: "text",
+        inputValidator: (value) => {
+            if (!value) {
+            return "Por favor ingresa tu nombre";
+            }
+        }
+    });
+    if (userName) {
+    Swal.fire(`Bienvenido ${userName}`);
+    localStorage.setItem('nombre', userName)
+    ubicacionNombre.innerHTML = `
+    <a href="./user.html">${userName } </a>
+    <i class="fa-solid fa-dumbbell"></i>`
+    }
+}
 
-let ejerciciosPrincipalesTrenSuperior = [
-    'Vuelos laterales','Press sobre cabeza','Trapecio con disco','Press banca plana','Press banca inclinda','Biceps mancuerna'];
+if (localStorage.getItem('nombre') == null) {
+    obtenerNombre()
+}else{
+    if(localStorage.getItem('nombre') != null) {
+        switch(localStorage.getItem('icono')){
+            case 'dumbbell':
+                ubicacionNombre.innerHTML = `
+                    <a href="./user.html">${localStorage.getItem('nombre') } </a>
+                    <i class="fa-solid fa-dumbbell"></i>`;
+                break;
+            case 'fighter':
+                ubicacionNombre.innerHTML = `
+                    <a href="./user.html">${localStorage.getItem('nombre') } </a>
+                    <i class="fa-solid fa-jet-fighter-up"></i>`;
+                break;
+            case 'dragon':
+                console.log('Drangonnn')
+                ubicacionNombre.innerHTML = `
+                    <a href="./user.html">${localStorage.getItem('nombre') } </a>
+                    <i class="fa-solid fa-dragon"></i>`;
+                break;
+            case 'person':
+                ubicacionNombre.innerHTML = `
+                    <a href="./user.html">${localStorage.getItem('nombre') } </a>
+                    <i class="fa-solid fa-person"></i>`;
+                break;
+            case 'rocket':
+                ubicacionNombre.innerHTML = `
+                    <a href="./user.html">${localStorage.getItem('nombre') } </a>
+                    <i class="fa-solid fa-rocket"></i>`;
+                break;
+            default:
+                ubicacionNombre.innerHTML = `
+                    <a href="./user.html">${localStorage.getItem('nombre') } </a>
+                    <i class="fa-solid fa-dumbbell"></i>`;
+                break;
+        }
+    }
+}
 
-let ejerciciosPrincipalesTrenInferior = [
-    'Squats','Cuadriceps en máquina','Isquios en máquina','Hip thrust','Peso muerto','Peso muerto Rumano'];
-
-let ejerciciosDeFuerza = [
-    'thrusters','wall balls','kettlebell swings'];
-
-let stretchings = [
-    'Opcion01','Opcion02','Opcion03','Opcion04','Opcion05'];
-
+// genero las variables con los tipos de ejercicios y las cantidaddes.
 let tiposEjercicios = ['ECTS', 'ECTI', 'EPTS', 'EPTI', 'EF', 'S']
 
 let cantidadesPrincipiantes = [ 
@@ -40,7 +86,7 @@ let cantidadesAvanzados = [
 ]
 
 // ejercicios es la variable donde van a quedar guardados todos los ejercicios
-const ejercicios =[]
+const ejercicios = []
 
 // creo la clase Ejercicio
 class Ejercicio {
@@ -48,7 +94,7 @@ class Ejercicio {
         //propiedades
         this.nombre = nombre.toLowerCase();
         this.tipo = tipo.toUpperCase();
-        this.imagen = "./img/1366_2000.jpeg"
+        this.img = "./img/1366_2000.jpeg"
     }
 }
 
@@ -59,78 +105,6 @@ function crearEjercicios (array, tipo){
     }
 }
 
-// ejecuto la funcion para la creacion de los ejercicios usando la clase y los arrays originales
-crearEjercicios(entradasEnCalorTrenSuperior, tiposEjercicios[0])
-crearEjercicios(entradasEnCalorTrenInferior, tiposEjercicios[1])
-crearEjercicios(ejerciciosPrincipalesTrenSuperior, tiposEjercicios[2])
-crearEjercicios(ejerciciosPrincipalesTrenInferior, tiposEjercicios[3])
-crearEjercicios(ejerciciosDeFuerza, tiposEjercicios[4])
-crearEjercicios(stretchings, tiposEjercicios[5])
-
-// creo la funcionalidad para que al presionar el boton administrador aparezca el formulario para agregar ejercicios.
-/* const botonAdministrador = document.querySelector('div#botonAdmin')
-const crearEjercicioContainer = document.querySelector('div#crearEjercicioContainer') */
-
-
-// agrego los tipos de ejercicios en el select del formulario del administrador. 
-const selectTipos = document.querySelector('select#tiposEjercicios')
-
-tiposEjercicios.forEach(ejercicios => {
-    let tipos = document.createElement('option')
-    tipos.innerText = ejercicios
-    selectTipos.appendChild(tipos)
-})
-
-// uso el formulario de la pagina administrador para crear un nuevo ejercicio.
-const formulario = document.querySelector('form#crearEjercicio')
-let datoNombreEjercicio = document.querySelector('input#nombreEjercicio')
-
-function agregarEjercicio (e) {
-    e.preventDefault()
-    let ejercicio = new Ejercicio (datoNombreEjercicio.value, selectTipos.value)
-    let resultadoBusqueda = ejercicios.find(el => el.nombre == datoNombreEjercicio.value.toLowerCase())
-    if(resultadoBusqueda == undefined && datoNombreEjercicio.value != ''){
-        ejercicios.push(ejercicio)
-        alert('Ejercicios agregado correctamente')
-    }else if (resultadoBusqueda != undefined) {
-        alert('El ejercicio ya existe')
-    }else if (datoNombreEjercicio.value == ''){
-        alert('El nombre del ejercicio no puede quedar vacio')
-    }
-    datoNombreEjercicio.value = ''
-}
-
-formulario.addEventListener('submit', agregarEjercicio)
-
-// Tomo el nombre del formulario de la pagina usuario y lo saludo en el header.
-
-const formSaludo = document.querySelector('form.nombreUsuarioForm')
-let datoNombreUsuario = document.querySelector('input#nombreUsuario')
-let datoPesoUsuario = document.querySelector('input#pesoUsuario')
-let ubicacionSaludo = document.querySelector('div#ubicacionSaludo')
-let contenedorFormUsuario = document.querySelector('div#NombreUsuarioContainer')
-// Esta variable la uso para buscar el peso guardado o para que busque el null si nunca se guardo.
-let peso = JSON.parse(localStorage.getItem('peso'))
-
-function saludarUsuario (e) {
-    e.preventDefault()
-    let saludo = document.createElement('p')
-    if (peso == null){
-        saludo.innerText = 'Hola ' + datoNombreUsuario.value
-    }else if (peso < datoPesoUsuario.value){
-        saludo.innerText = 'Hola ' + datoNombreUsuario.value + ' subiste ' + (datoPesoUsuario.value - peso) + 'Kg'
-    }else if (peso > datoPesoUsuario.value){
-        saludo.innerText = 'Hola ' + datoNombreUsuario.value + ' bajaste ' + (peso - datoPesoUsuario.value) + 'Kg'
-    }else{
-        console.log('Algo salio mal')
-    }
-    localStorage.setItem('peso', datoPesoUsuario.value)
-    ubicacionSaludo.appendChild(saludo)
-    contenedorFormUsuario.remove()
-}
-
-formSaludo.addEventListener('submit', saludarUsuario)
-
 // -------------- Funcionalidad eleccion de rutinas------------------//
 // Creo una funcion para filtrar los ejercicios segun su tipo.
 let ejerciciosPorTipos = []
@@ -139,7 +113,6 @@ function agruparPorTipos (array, tipos) {
 }
 
 // Creo una funcion para elegir al azar los ejercicios.
-
 function seleccionAlAzar(datos) {
     return datos[Math.floor(Math.random() * datos.length)];
 };
@@ -158,13 +131,11 @@ const creacionDeRutina = (array, cantidadEjercicios,cantidadRepeticiones) => {
                 bandera = false;
             };
         };
-
         if (bandera){
             ejercicioElegido.repeticiones = cantidadRepeticiones
             rutinaParcial.push(ejercicioElegido);
         };
     };
-
 };
 
 let rutinaFinal = [];
@@ -177,8 +148,47 @@ const agregarARutinaFinal = (rutinaParcial) => {
     rutinaParcial = []
 }
 
-// Creo una funcion por cada nivel para que se ejecute al precionar el boton de nivel.
+// -------- Creo una funcion por cada nivel para que se ejecute al precionar el boton de nivel.-------
 
+// Primero creo la funcion que va buscar los datos a datos.JSON para principiante.
+function buscarDatosPrincipiante (e) {
+    e.preventDefault
+    fetch('./datos.json')
+    .then(response => response.json())
+    .then(data => data.forEach(ejercicio => {
+    ejercicios.push(ejercicio)    
+    }))
+    .then(data => creacionDeRutinaPrincipiante())
+    .then(data => ejecucionRutinaPrincipiante())
+    .catch(err => {
+        console.error('Hubo un error' + err)
+    })
+}
+// Creo la funcion que va buscar los datos a datos.JSON para Intermedio.
+function buscarDatosIntermedio (e) {
+    e.preventDefault
+    fetch('./datos.json')
+    .then(response => response.json())
+    .then(data => data.forEach(ejercicio => {
+    ejercicios.push(ejercicio)    
+}))
+.then(data => creacionDeRutinaIntermedio())
+.then(data => ejecucionRutinaIntermedio())
+}
+// Creo la funcion que va buscar los datos a datos.JSON para Avanzado.
+function buscarDatosAvanzado (e) {
+    e.preventDefault
+    fetch('./datos.json')
+    .then(response => response.json())
+    .then(data => data.forEach(ejercicio => {
+    ejercicios.push(ejercicio)    
+}))
+.then(data => creacionDeRutinaAvanzado())
+.then(data => ejecucionRutinaAvanzado())
+}
+
+
+// creo la funcion para crear la rutina en cada nivel
 function creacionDeRutinaPrincipiante () {
     agruparPorTipos(ejercicios, tiposEjercicios[0])
     creacionDeRutina(ejerciciosPorTipos, cantidadesPrincipiantes[0].cant, cantidadesPrincipiantes[0].repeticiones)
@@ -210,6 +220,7 @@ function creacionDeRutinaPrincipiante () {
     agregarARutinaFinal(rutinaParcial)
     ejerciciosPorTipos = []
     rutinaParcial = []
+    obtenerPeliculas()
 }
 
 function creacionDeRutinaIntermedio () {
@@ -243,6 +254,7 @@ function creacionDeRutinaIntermedio () {
     agregarARutinaFinal(rutinaParcial)
     ejerciciosPorTipos = []
     rutinaParcial = []
+    obtenerPeliculas()
 }
 
 function creacionDeRutinaAvanzado () {
@@ -276,68 +288,92 @@ function creacionDeRutinaAvanzado () {
     agregarARutinaFinal(rutinaParcial)
     ejerciciosPorTipos = []
     rutinaParcial = []
+    obtenerPeliculas()
 }
 
 // Selecciono los botones de los niveles y hago que cada uno ejecute la funcion de la creacion de la rutina de su nivel.
-
 const botonPrincipiante = document.querySelector('div#card-principiante')
 const botonIntermedio = document.querySelector('div#card-intermedio')
 const botonAvanzado = document.querySelector('div#card-avanzado')
 const contenedorRutina = document.querySelector('div.rutina-container')
 
-// creo la funcion con el evento para el boton principiante.
-function ejecucionRutinaPrincipiante (e){
-    e.preventDefault
+// creo la funcion para adaptar el DOM para el boton principiante.
+function ejecucionRutinaPrincipiante (){
     contenedorRutina.innerHTML = ""
-    creacionDeRutinaPrincipiante()
     for (let i = 0; i < rutinaFinal.length; i++){
         contenedorRutina.innerHTML += 
             `<div class="card-ejercicio">
-            <img id="imagen-ejercicio" src="${rutinaFinal[i].imagen}">
+            <img id="imagen-ejercicio" src="${rutinaFinal[i].img}">
+            <h5>${rutinaFinal[i].nombre}</h5>
+            <h5>${rutinaFinal[i].repeticiones}</h5>
+            </div>`
+    }
+    rutinaFinal = []
+}
+
+botonPrincipiante.addEventListener('click', buscarDatosPrincipiante)
+
+// creo la funcion para adaptar el DOM para el boton intermedio.
+function ejecucionRutinaIntermedio (){
+    contenedorRutina.innerHTML = ""
+    for (let i = 0; i < rutinaFinal.length; i++){
+        contenedorRutina.innerHTML += 
+            `<div class="card-ejercicio">
+            <img id="imagen-ejercicio" src="${rutinaFinal[i].img}">
             <h5>${rutinaFinal[i].nombre} </h5>
             <h5>${rutinaFinal[i].repeticiones} </h5>
             </div>`
     }
-    
     rutinaFinal = []
 }
 
-botonPrincipiante.addEventListener('click', ejecucionRutinaPrincipiante)
-
-// creo la funcion con el evento para el boton intermedio.
-function ejecucionRutinaIntermedio (e){
-    e.preventDefault
-    contenedorRutina.innerHTML = ""
-    creacionDeRutinaIntermedio()
-    for (let i = 0; i < rutinaFinal.length; i++){
-        contenedorRutina.innerHTML += 
-            `<div class="card-ejercicio">
-            <img id="imagen-ejercicio" src="${rutinaFinal[i].imagen}">
-            <h5>${rutinaFinal[i].nombre} </h5>
-            <h5>${rutinaFinal[i].repeticiones} </h5>
-            </div>`
-    }
-    
-    rutinaFinal = []
-}
-
-botonIntermedio.addEventListener('click', ejecucionRutinaIntermedio)
+botonIntermedio.addEventListener('click', buscarDatosIntermedio)
 
 // creo la funcion con el evento para el boton avanzado.
-function ejecucionRutinaAvanzado (e){
-    e.preventDefault
+function ejecucionRutinaAvanzado (){
     contenedorRutina.innerHTML = ""
-    creacionDeRutinaAvanzado()
     for (let i = 0; i < rutinaFinal.length; i++){
         contenedorRutina.innerHTML += 
             `<div class="card-ejercicio">
-            <img id="imagen-ejercicio" src="${rutinaFinal[i].imagen}">
+            <img id="imagen-ejercicio" src="${rutinaFinal[i].img}">
             <h5>${rutinaFinal[i].nombre} </h5>
             <h5>${rutinaFinal[i].repeticiones} </h5>
             </div>`
     }
-    
     rutinaFinal = []
 }
 
-botonAvanzado.addEventListener('click', ejecucionRutinaAvanzado)
+botonAvanzado.addEventListener('click', buscarDatosAvanzado)
+
+// Genero la logica para que recomiende una pelicula al finalizar cada rutina.
+
+function pagina () {
+    return Math.floor(Math.random() * 500)
+};
+
+const obtenerPeliculas = () => {
+    const options = {
+        method: 'GET',
+        headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjBiZTJhNzk0MDZlNmExMzVmNWYzNDkwYWRlZWFjMiIsInN1YiI6IjY2MWQ5NmRmMzg5ZGExMDE2MzM2MDk3YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OjLtbvd_s68nBvIULY3wI4WabsYb6ONuJ6uF3-5g5tI'
+        }
+    };
+    fetch(`https://api.themoviedb.org/3/movie/popular?language=es-la&page=${pagina()}`, options)
+        .then(response => response.json())
+        .then(response => {
+            let peliculas = '';
+            let peliAlAzar = Math.floor(Math.random() * response.results.length)
+            let pelicula = response.results[peliAlAzar]
+            peliculas += `
+                <div class="pelicula">
+                    <h3>Al terminar tu rutina te recomendamos ver esta película:<h3/>
+                    <img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}">
+                    <h3 class="titulo">${pelicula.title}</h3>
+                </div>
+                `
+            document.getElementById('pelicula-container').innerHTML = peliculas
+        })
+        .catch(err => console.error(err));
+}
+

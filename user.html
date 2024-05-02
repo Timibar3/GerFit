@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/011eed8222.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="./js/user.js" ></script>
+    <title>Pagina Usuario</title>
+</head>
+<body>
+    <header>
+        <div class="headerLinkContainer" id="botonAdmin">
+            <a class="linkHeader" href="./admin.html">Administrador</a>
+        </div>
+        <div class="headerLinkContainer">
+            <a class="linkHeader" href="./index.html">Home</a>
+        </div>
+        <div class="headerLinkContainer">
+            <a href="./user.html" id="ubicacionSaludo"></a>
+        </div>    
+    </header>
+    <main>
+        <h2 id="tituloNiveles">Personaliza tus opciones</h2>
+        <div class="opciones-usuario-container">
+            <div class="opciones-usuario">
+                <div id="cerrar-sesion" >Cerrar sesion</div>
+            </div>
+            <div class="opciones-usuario">
+                <form id="formulario-icono" >
+                    <label for="">Elige tu icono</label><br>
+                    <input type="radio" name="icono" value="dumbbell"> <i class="fa-solid fa-dumbbell"></i> <br>
+                    <input type="radio" name="icono" value="fighter"> <i class="fa-solid fa-jet-fighter-up"></i> <br>
+                    <input type="radio" name="icono" value="dragon"> <i class="fa-solid fa-dragon"></i> <br>
+                    <input type="radio" name="icono" value="person"> <i class="fa-solid fa-person"></i> <br>
+                    <input type="radio" name="icono" value="rocket"> <i class="fa-solid fa-rocket"></i> <br>
+                    <button type="submit" >Elegir</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

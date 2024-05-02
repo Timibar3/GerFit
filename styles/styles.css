@@ -8,10 +8,14 @@ body {
     background-color:#222831;
     color: #eeeeee;
     font-family: "Lato", sans-serif;
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position-x:center;
 }
 
-#displayNone {
-    display: none;
+.fa-solid {
+    margin-left: 6px;
 }
 
 header {
@@ -23,6 +27,7 @@ header {
 }
 
 div.headerLinkContainer {
+    color: #393e46;
     background-color: #eeeeee;
     margin: 7px;
     display: flex;
@@ -110,8 +115,7 @@ div#card-avanzado {
     color: #eeeeee;
 }
 
-div.rutina-container {
-    
+div.rutina-container {    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -130,3 +134,141 @@ img#imagen-ejercicio {
     width: 145px;
 }
 
+/* Diseño de la pagina manual.html*/
+
+main.main-manual {
+    display: flex;
+    flex-direction: row;
+}
+div.tipos-container {    
+    display: flex;
+    justify-content: space-around;
+
+}
+
+div.tipo-button {
+    display: flex;
+    width: 150px;
+    height: 70px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    align-items: center;
+    
+}
+
+#ECTS {
+    background-color: #e7cc65;
+    color: #393e46;
+}
+
+#ECTI {
+    background-color: #fd7014;
+    color: #222831;
+}
+
+#EPTS {
+    background-color: #eeeeee;
+    color: #393e46;
+}
+
+#EPTI {
+    background-color: #a7c5fa;
+    color: #393e46;
+}
+
+#EF {
+    background-color: #1b383a;
+    color: #eeeeee;
+}
+
+#S {
+    background-color: #410825;
+    color: #eeeeee;
+}
+
+div.carrito {
+    background-color: #eeeeee;
+    width: 200px;
+    height: 100vh;
+}
+
+div#contenedor-tipos {
+    flex-grow: 1;
+}
+div.card-container {    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+div.boton-cierre {
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+div.boton-cierre#boton-cancelar {
+    background-color: #410825;
+}
+
+div.boton-cierre#boton-confirmar {
+    background-color: #fd7014;
+}
+
+div.card-ejercicio-carrito {
+    background-color: #393e46;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+}
+
+h5.titulo-ejercicio-carrito {
+    flex-grow: 1;
+}
+div.borrar-ejercicio {
+    background-color: red;
+    padding: 3px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+/* Diseño de la card de la pelicula */
+
+div.pelicula {
+    background-color: #393e46;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    
+}
+
+img.poster {
+    width: 150px;
+    margin: 5px;
+}
+
+/* diseño pagina usuario */
+
+div.opciones-usuario {
+    background-color: #393e46;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    width: 300px;
+}
+
+div#cerrar-sesion {
+    background-color: red;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
