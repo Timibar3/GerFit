@@ -8,9 +8,9 @@ body {
     background-color:#222831;
     color: #eeeeee;
     font-family: "Lato", sans-serif;
-    background-image: url(../img/fondo.jpg);
+    background-image: url(../img/fondo01.jpg);
     background-repeat: no-repeat;
-    background-size: 100vw;
+    background-size: 150vw;
     background-position-x:center;
 }
 
@@ -34,6 +34,11 @@ div.headerLinkContainer {
     align-items: center;
     justify-content: center;
     width: 18%;
+}
+
+img#logo {
+    height: 50px;
+    margin-right: 190px;   
 }
 
 div.headerLinkContainer p {
@@ -134,6 +139,29 @@ img#imagen-ejercicio {
     width: 145px;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #222831;
+    background-color: #eeeeee;
+    width: 100vw;
+    height: 30px;
+}
+
+img#logo-footer {
+    height: 25px;
+    margin-left: 10px;   
+}
+
+div#iconos-footer {
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+}
+
 /* Diseño de la pagina manual.html*/
 
 main.main-manual {
@@ -143,7 +171,6 @@ main.main-manual {
 div.tipos-container {    
     display: flex;
     justify-content: space-around;
-
 }
 
 div.tipo-button {

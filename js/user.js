@@ -42,7 +42,6 @@ const botonCerrarSesion = document.getElementById('cerrar-sesion')
 
 botonCerrarSesion.addEventListener('click', (e) => {
     e.preventDefault;
-    console.log('Cerre!!')
     localStorage.removeItem('nombre')
     localStorage.removeItem('icono')
 })
@@ -50,11 +49,6 @@ botonCerrarSesion.addEventListener('click', (e) => {
 // funcionalidad elegir icono
 const formularioIcono = document.querySelector('#formulario-icono')
 const radioIconos = document.getElementsByName('icono')
-console.log(radioIconos)
-console.log(radioIconos[1].checked)
-console.log(radioIconos[0])
-
-
 
 function seleccionarIcono () {
     formularioIcono.addEventListener('submit', (e) => {
