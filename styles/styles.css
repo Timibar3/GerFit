@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
 body {
     background-color:#222831;
     color: #eeeeee;
@@ -120,6 +129,14 @@ div#card-avanzado {
     color: #eeeeee;
 }
 
+div#card-manual {
+    background-color: #a7c5fa;
+}
+
+a#link-manual {
+    color: #eeeeee;
+}
+
 div.rutina-container {    
     display: flex;
     flex-wrap: wrap;
@@ -218,7 +235,7 @@ div.tipo-button {
 div.carrito {
     background-color: #eeeeee;
     width: 200px;
-    height: 100vh;
+    height: 90vh;
 }
 
 div#contenedor-tipos {

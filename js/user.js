@@ -44,6 +44,7 @@ botonCerrarSesion.addEventListener('click', (e) => {
     e.preventDefault;
     localStorage.removeItem('nombre')
     localStorage.removeItem('icono')
+    ubicacionNombre.innerHTML = ""
 })
 
 // funcionalidad elegir icono
